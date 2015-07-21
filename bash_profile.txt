@@ -99,6 +99,3 @@ alias techinterview=' cd /Users/seanmarman/Documents/repos/technical-interviews 
 function google() { open /Applications/Google\ Chrome.app/ "http://www.google.com/search?q= $1";}
 function chrome() { open -a "Google Chrome" "$1";}
 
-#scp files up to ec2 instance
-alias ec2me='scp -i portfilio.pem /Users/seanmarman/Documents/repos/DBC/smarman85.github.io.zip ec2-user@ec2-54-67-85-125.us-west-1.compute.amazonaws.com:~/.'
-alias ec2ssh='ssh -i portfilio.pem ec2-user@ec2-54-67-85-125.us-west-1.compute.amazonaws.com'
