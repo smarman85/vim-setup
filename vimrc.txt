@@ -35,6 +35,9 @@ Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
+" colorscheme meta5
+Plugin 'christophermca/meta5'
+
 
 " optional 
 Plugin 'honza/vim-snippets'
@@ -59,8 +62,11 @@ filetype plugin indent on    " required
 
 syntax on
 set number
-"set colorschemet to mustang
+"set colorscheme to mustang
 colorscheme mustang
+"set colorscheme to onedark
+"colorscheme onedark
+"colorscheme meta5
 set t_Co=256
 set background=dark
 set ts=2 sts=2 noet
@@ -77,6 +83,11 @@ set encoding=utf-8
 set fillchars+=stl:\ ,stlnc:\
 set term=xterm-256color
 set termencoding=utf-8
+" set mapleader
+let mapleader = "\<Space>"
+" set copy/paste
+vmap <Leader>y :w !pbcopy<CR>
+nmap <Leader>p :r !pbpaste<CR>
 
 if has("gui_running")
 let s:uname = system("uname")

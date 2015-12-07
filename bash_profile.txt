@@ -1,18 +1,12 @@
-# echo is like puts for bash (bash is the program running in your terminal)
-echo "Loading ~/.bash_profile a shell script that runs in every new terminal you open"
-
-# $VARIABLE will render before the rest of the command is executed
-echo "Logged in as $USER at $(hostname)"
-
 # Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-# Path for RVM
-test -d $HOME/.rvm/bin && PATH=$PATH:$HOME/.rvm/bin
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+## Path for RVM
+#test -d $HOME/.rvm/bin && PATH=$PATH:$HOME/.rvm/bin
 
 # Rbenv autocomplete and shims
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+#if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # Path for RBENV
-test -d $HOME/.rbenv/ && PATH="$HOME/.rbenv/bin:$PATH"
+#test -d $HOME/.rbenv/ && PATH="$HOME/.rbenv/bin:$PATH"
 
 # Path changes are made non-destructive with PATH=new_path;$PATH   This is like A=A+B so we preserve the old path
 
@@ -72,28 +66,40 @@ alias ls='ls -Gh'
 # Force grep to always use the color option and show line numbers
 export GREP_OPTIONS='--color=always'
 
+# Set edior to VIM
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
 # Set sublime as the default editor
-which -s subl && export EDITOR="subl --wait"
+#which -s subl && export EDITOR="subl --wait"
 
 # Useful aliases
+alias adm01='ssh opsdcadm01'
+alias adm02='ssh opsdcadm02'
 
-alias e=subl
-alias be="bundle exec"
-alias desktop="cd /Users/seanmarman/Desktop/"
+alias ans='cd ~/git/configuration-management/ansible'
+alias vlt='sudo chown root:techops /opt/ops/asnsible-vault/* ; sudo chmod 750 /opt/ops/ansible-vault/*'
 
-# adding alias for dbc repo
+alias notes='cd /Users/smarman/Dropbox\ \(Marqeta\)/notes && ls'
+alias deploy='vim /Users/smarman/Dropbox\ \(Marqeta\)/notes/ansible_notes/deploy_notes.txt'
+alias router='vim /Users/smarman/Dropbox\ \(Marqeta\)/notes/router_deploys.txt'
+alias build='vim /Users/smarman/Dropbox\ \(Marqeta\)/notes/petes_buildout_notes.txt'
+alias nagomc='ssh opsdcmon01.omc.marqeta.com'
+alias av='ssh root@opsdcavlt01.omc.marqeta.com'
+alias token='vim /Users/smarman/Dropbox\ \(Marqeta\)/notes/ansible_notes/ansible-token.txt'
 
-alias dbc=' cd /Users/seanmarman/Documents/repos/DBC/ ; ls'
-alias dbc2=' cd /Users/seanmarman/Documents/repos/DBC/phase-2/ ; ls'
-alias dbc3=' cd /Users/seanmarman/Documents/repos/dbc/phase-3/ ; ls'
-
-# alias for firebase repo
-
-alias firebase=' cd /Users/seanmarman/Documents/repos/ph2-p10a/ ; ls'
+#alias e=subl
+#alias be="bundle exec"
+alias desktop="cd /Users/smarman/Desktop/"
 
 # alias for repos directory
-alias repos=' cd /Users/seanmarman/Documents/repos/ ; ls'
-alias techinterview=' cd /Users/seanmarman/Documents/repos/technical-interviews  ; ls'
+alias repos='cd /Users/smarman/Documents/repos/ ; ls'
+
+# alias for vagrant ssh 
+alias vssh='vagrant ssh'
+
+#token for ansible test room
+export TEST_ROOM_TOKEN=4IBllZAbHgCaatamEDY7co8OVmHQl343ZaJm9okb
 
 # functions for opening an file with google chrome
 function google() { open /Applications/Google\ Chrome.app/ "http://www.google.com/search?q= $1";}
