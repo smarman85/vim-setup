@@ -37,6 +37,7 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 " colorscheme meta5
 Plugin 'christophermca/meta5'
+Plugin 'terryma/vim-multiple-cursors'
 
 
 " optional 
