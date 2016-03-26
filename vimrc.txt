@@ -40,7 +40,7 @@ Plugin 'christophermca/meta5'
 Plugin 'terryma/vim-multiple-cursors'
 
 
-" optional 
+" optional
 Plugin 'honza/vim-snippets'
 
 " indentation helper
