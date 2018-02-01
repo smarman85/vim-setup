@@ -98,8 +98,6 @@ alias repos='cd /Users/smarman/Documents/repos/ ; ls'
 # alias for vagrant ssh 
 alias vssh='vagrant ssh'
 
-#token for ansible test room
-export TEST_ROOM_TOKEN=4IBllZAbHgCaatamEDY7co8OVmHQl343ZaJm9okb
 
 # functions for opening an file with google chrome
 function google() { open /Applications/Google\ Chrome.app/ "http://www.google.com/search?q= $1";}
